@@ -15,7 +15,7 @@
 		0DE55E5E2C46F1CB0052E726 /* timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE55E5D2C46F1CB0052E726 /* timer.swift */; };
 		0DE55E602C46F1E20052E726 /* summaryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE55E5F2C46F1E20052E726 /* summaryPage.swift */; };
 		0DE55E622C485AC00052E726 /* shareWithOthers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE55E612C485AC00052E726 /* shareWithOthers.swift */; };
-		D1D003D52C4822E800768DDA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D003D42C4822E800768DDA /* Menu.swift */; };
+		D1D003D72C48615C00768DDA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D003D62C48615C00768DDA /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		0DE55E5D2C46F1CB0052E726 /* timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timer.swift; sourceTree = "<group>"; };
 		0DE55E5F2C46F1E20052E726 /* summaryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryPage.swift; sourceTree = "<group>"; };
 		0DE55E612C485AC00052E726 /* shareWithOthers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareWithOthers.swift; sourceTree = "<group>"; };
-		D1D003D42C4822E800768DDA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		D1D003D62C48615C00768DDA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			children = (
 				0DE55DF12C41C8D20052E726 /* KWK_Productivity_Group_D4App.swift */,
 				0DE55DF32C41C8D20052E726 /* ContentView.swift */,
-				D1D003D42C4822E800768DDA /* Menu.swift */,
+				D1D003D62C48615C00768DDA /* Menu.swift */,
 				0DE55E5B2C46F1B70052E726 /* timePicker.swift */,
 				0DE55E5D2C46F1CB0052E726 /* timer.swift */,
 				0DE55E5F2C46F1E20052E726 /* summaryPage.swift */,
@@ -154,7 +154,7 @@
 			files = (
 				0DE55E5C2C46F1B70052E726 /* timePicker.swift in Sources */,
 				0DE55E602C46F1E20052E726 /* summaryPage.swift in Sources */,
-				D1D003D52C4822E800768DDA /* Menu.swift in Sources */,
+				D1D003D72C48615C00768DDA /* Menu.swift in Sources */,
 				0DE55E622C485AC00052E726 /* shareWithOthers.swift in Sources */,
 				0DE55E5E2C46F1CB0052E726 /* timer.swift in Sources */,
 				0DE55DF42C41C8D20052E726 /* ContentView.swift in Sources */,
