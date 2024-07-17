@@ -30,7 +30,7 @@ struct ContentView: View {
                             .fill((Color(red:1, green: 0.43, blue: 0.53)))
                             .frame(width: 120, height: 50)
                             .cornerRadius(10)
-                        NavigationLink(destination:Main()){
+                        NavigationLink(destination:Menu()){
                                 Text("Start")
                             }
                         .foregroundColor(.white)

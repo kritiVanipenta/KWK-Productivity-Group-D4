@@ -4,7 +4,6 @@
 //
 //  Created by Kriti Vanipenta on 7/16/24.
 //
-
 import SwiftUI
 struct summaryPage: View {
     @State private var numHours = "xx"
@@ -27,21 +26,15 @@ struct summaryPage: View {
             .background(Color(red:0.97, green: 0.73, blue: 0.73))
             .cornerRadius(10)
             
-          //home button
-          ZStack {
-            Rectangle()
-              .fill((Color(red:0.97, green: 0.73, blue: 0.73)))
-              .frame(width: 70, height: 70)
-              .cornerRadius(10)
+              NavigationLink(destination: ContentView()) {
+                  Image("home")
+                    .resizable()
+                    .cornerRadius(10)
+                    .frame(width: 90, height: 70)
+                    //.offset(x: -120, y: 0)
+              }
               .offset(x: -120, y: 0)
               
-            //add image of home button
-            Image("home")
-              .resizable()
-              .cornerRadius(10)
-              .frame(width: 90, height: 70)
-              .offset(x: -120, y: 0)
-          }
             
           //main box
           ZStack {
@@ -89,12 +82,12 @@ struct summaryPage: View {
               .fill((Color(red:0.97, green: 0.73, blue: 0.73)))
               .frame(width: 2800, height: 50)
               .cornerRadius(10)
-              
-            Text("Share with others! 📲")
-              .frame(width: 300)
-              .font(.custom("Times New Roman", size: 30))
-              .foregroundColor(.white)
-            //when clicked on, pull up last page (screenshot page)
+              NavigationLink(destination: shareWithOthers()) {
+                  Text("Share with others! 📲")
+                    .frame(width: 300)
+                    .font(.custom("Times New Roman", size: 30))
+                    .foregroundColor(.white)
+              }
               
           }
                 Spacer()
@@ -106,3 +99,4 @@ struct summaryPage: View {
 #Preview {
   summaryPage()
 }
+
