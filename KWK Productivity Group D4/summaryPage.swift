@@ -40,7 +40,7 @@ struct summaryPage: View {
           ZStack {
             Rectangle()
             //change color to darker shade
-              .fill((Color(red:0.988, green: 0.729, blue: 0.733)))
+              .fill((Color(red: 1.0, green: 0.715, blue: 0.765)))
               .frame(width: 320, height: 450)
               .cornerRadius(10)
               
@@ -74,12 +74,11 @@ struct summaryPage: View {
                   .fontWeight(.bold)
                   .foregroundColor(.white)
           }
-            
           //change to different shade
           //share button
           ZStack {
             Rectangle()
-              .fill((Color(red:0.97, green: 0.73, blue: 0.73)))
+              .fill((Color(red: 0.973, green: 0.757, blue: 0.757)))
               .frame(width: 2800, height: 50)
               .cornerRadius(10)
               NavigationLink(destination: shareWithOthers()) {
@@ -88,13 +87,13 @@ struct summaryPage: View {
                     .font(.custom("Times New Roman", size: 30))
                     .foregroundColor(.white)
               }
-              
           }
                 Spacer()
         }
       }
     }
   }
+    
 }
 #Preview {
   summaryPage()

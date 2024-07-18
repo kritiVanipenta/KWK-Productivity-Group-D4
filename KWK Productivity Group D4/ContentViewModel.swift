@@ -26,8 +26,8 @@ extension timer {
             self.initialMinutes = minutes
             self.endDate = Date().addingTimeInterval(Double(minutes) * 60)
             self.isActive = true
-            self.paused = false
-            currentTime = minutes
+            //self.paused = false
+            //currentTime = minutes
         }
         
      
@@ -35,7 +35,7 @@ extension timer {
             self.minutes = initialMinutes
             self.isActive = false
             self.time = "\(Int(minutes)):00"
-            self.paused = false
+            //self.paused = false
         }
         
      
@@ -54,7 +54,7 @@ extension timer {
             
             let minutes = Int(diff) / 60
             let seconds = Int(diff) % 60
-            let currentTime = minutes + seconds
+            //let currentTime = minutes + seconds
             
             //self.minutes = Float(minutes)
             self.time = String(format: "%d:%02d", minutes, seconds)

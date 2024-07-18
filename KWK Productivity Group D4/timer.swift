@@ -67,49 +67,102 @@ struct timer: View {
     private let width: CGFloat = 250
     
     var body: some View {
-        VStack {
-            Text(vm.time)
-                .font(.system(size: 70, weight: .medium, design: .rounded))
-                .alert("Timer done!", isPresented: $vm.showingAlert) {
-                    Button("Continue", role: .cancel) {}
-                }
-                .padding()
-                .frame(width: width)
-                .background(Color(UIColor.systemBackground))
-                .cornerRadius(20)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 4)
-                )
+        
+        ZStack {
+            //background image
+            Image("Main_bg")
+                .ignoresSafeArea()
             
-            Slider(value: $vm.minutes, in: 1...10)
-                .padding()
-                .disabled(vm.isActive)
-                .animation(.easeInOut, value: vm.minutes)
-                .frame(width: width)
-            HStack(spacing: 20) {
-                Button("Start") {
-                    vm.start(minutes: vm.minutes)
+            VStack {
+                Text(vm.time)
+                    .font(.system(size: 70, weight: .medium, design: .rounded))
+                    .alert("Timer done!", isPresented: $vm.showingAlert) {
+                        Button("Continue", role: .cancel) {}
+                    }
+                    .padding()
+                    .frame(width: width)
+                    .background(Color(UIColor.systemBackground))
+                    .cornerRadius(20)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray, lineWidth: 4)
+                    )
+                
+                Slider(value: $vm.minutes, in: 1...45)
+                    .padding()
+                    .disabled(vm.isActive)
+                    .animation(.easeInOut, value: vm.minutes)
+                    .frame(width: width)
+                
+                //first row of buttons
+                //start and reset button
+                VStack(spacing: 20) {
+                    HStack {
+                        //start button
+                        ZStack {
+                            Rectangle()
+                                .fill((Color(red:0.86, green: 0.65, blue: 0.7)))
+                                .frame(width: 100, height: 60)
+                                .cornerRadius(10)
+                            Button("Start") {
+                                vm.start(minutes: vm.minutes)
+                            }
+                            .tint(.black)
+                            .font(.custom("Times New Roman", size: 30))
+                        }
+                        .disabled(vm.isActive)
+                        
+                        //reset button
+                        ZStack {
+                            Rectangle()
+                                //.fill((Color(red:0.667, green: 1, blue: 0.8)))
+                                .fill((Color(red:1, green: 0.75, blue: 0.6)))
+                                .frame(width: 100, height: 60)
+                                .cornerRadius(10)
+                            
+                            Button("Reset", action: vm.reset)
+                                .tint(.black)
+                                .font(.custom("Times New Roman", size: 30))
+                        }
+                    }
+                    
+                    //second row of butons
+                    // pause and resume buttons
+                    HStack {
+                        //pause button
+                        ZStack {
+                            Rectangle()
+                                .fill((Color(red:0.827, green: 0.827, blue: 0.827)))
+                                .frame(width: 100, height: 60)
+                                .cornerRadius(10)
+                            Button("Pause", action: vm.reset)
+                                .tint(.black)
+                                .font(.custom("Times New Roman", size: 30))
+                        }
+                        //resume button
+                        ZStack {
+                            Rectangle()
+                                .fill((Color(red:0.69, green: 0.878, blue: 0.99)))
+                                .frame(width: 100, height: 60)
+                                .cornerRadius(10)
+                            Button("Resume", action: vm.reset)
+                                .tint(.black)
+                                .font(.custom("Times New Roman", size: 30))
+                        }
+                    }
+                    
+                    
+
+                    
                 }
-                .disabled(vm.isActive)
-                
-                Button("Reset", action: vm.reset)
-                    .tint(.red)
-                
-                Button("Pause", action: vm.reset)
-                    .tint(.green)
-                
-                Button("Resume", action: vm.reset)
-                    .tint(.purple)
-                
-                
+                .frame(width: width)
             }
-            .frame(width: width)
-        }
-        .onReceive(timer) { _ in
-            vm.updateCountdown()
+            .onReceive(timer) { _ in
+                vm.updateCountdown()
+            }
         }
     }
+    //end of z stack
 }
 struct timer_Previews: PreviewProvider {
     static var previews: some View {
