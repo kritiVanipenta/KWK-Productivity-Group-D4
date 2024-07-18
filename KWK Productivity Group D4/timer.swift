@@ -126,29 +126,18 @@ struct timer: View {
                         }
                     }
                     
-                    //second row of butons
-                    // pause and resume buttons
-                    HStack {
-                        //pause button
-                        ZStack {
-                            Rectangle()
-                                .fill((Color(red:0.827, green: 0.827, blue: 0.827)))
-                                .frame(width: 100, height: 60)
-                                .cornerRadius(10)
-                            Button("Pause", action: vm.reset)
-                                .tint(.black)
-                                .font(.custom("Times New Roman", size: 30))
-                        }
-                        //resume button
-                        ZStack {
-                            Rectangle()
-                                .fill((Color(red:0.69, green: 0.878, blue: 0.99)))
-                                .frame(width: 100, height: 60)
-                                .cornerRadius(10)
-                            Button("Resume", action: vm.reset)
-                                .tint(.black)
-                                .font(.custom("Times New Roman", size: 30))
-                        }
+                    // summary button
+                    ZStack {
+                        Rectangle()
+                            .fill((Color(red:1, green: 0.43, blue: 0.53)))
+                            .frame(width: 220, height: 60)
+                        .cornerRadius(10)
+                        
+                        NavigationLink(destination: summaryPage()){
+                                Text("Summary")
+                            }
+                        .foregroundColor(.white)
+                        .font(.custom("Times New Roman", size: 40))
                     }
                     
                     

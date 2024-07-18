@@ -61,7 +61,6 @@ struct Menu: View {
                         NavigationLink(destination: summaryPage()){
                                 Text("Summary")
                             }
-                        //add modifiers for summary picker link
                         .foregroundColor(.white)
                         .font(.custom("Times New Roman", size: 40))
                     }
